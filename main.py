@@ -1,21 +1,25 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
+cards = []
 
-questions = [{"name": "saba", "email":"sabashavbalakhashvili@gmail.com", "comment": "blablablu"}
-]
 @app.route('/')
 def home():
-    return render_template('website.html')
+    return render_template("website.html")
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
+@app.route('/admin/add_item', methods = ["POST", 'GET'])
+def add_item():
+    if request.method == 'POST':
+        print(request.form)
+        title = request.form.get('title')
+        description = request.form.get('description')
+        image = request.form.get('image')
 
-@app.route('/add_question')
-def add_question():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    comment = request.form.get('comment')
-if __name__ == "__main__":
-    app.run(debug = True)
+        cards.append({'title': title, 'description':description, 'image': image})
+        print(cards)
+        return render_template("website.html", cards=cards)
+    return render_template("admin.html")
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
