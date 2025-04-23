@@ -19,10 +19,11 @@ body{
 .card-wrap{
   display: flex;
   flex-wrap: wrap;
-  width: 94%;
-  margin-left: 3%;
+  width: 90%;
+  margin-left: 5%;
   margin-top: 10px;
   font-family: cursive;
+  margin-bottom: 10px;
 }
 .card{
   margin-left: 25px;
@@ -102,13 +103,13 @@ footer{
   <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://media.licdn.com/dms/image/v2/C5112AQHBZXhV3Nb4Yg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1520044379457?e=2147483647&v=beta&t=jshMv1sb_RdC0d6HTCdXtvHwWZgtxVGK953SVQyJ2SU" class="d-block w-100" alt="...">
+        <img src="https://static.vecteezy.com/system/resources/previews/007/062/183/non_2x/summer-forest-background-free-vector.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://media.licdn.com/dms/image/v2/C5112AQHBZXhV3Nb4Yg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1520044379457?e=2147483647&v=beta&t=jshMv1sb_RdC0d6HTCdXtvHwWZgtxVGK953SVQyJ2SU" class="d-block w-100" alt="...">
+        <img src="https://static.vecteezy.com/system/resources/previews/007/062/183/non_2x/summer-forest-background-free-vector.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://media.licdn.com/dms/image/v2/C5112AQHBZXhV3Nb4Yg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1520044379457?e=2147483647&v=beta&t=jshMv1sb_RdC0d6HTCdXtvHwWZgtxVGK953SVQyJ2SU" class="d-block w-100" alt="...">
+        <img src="https://static.vecteezy.com/system/resources/previews/007/062/183/non_2x/summer-forest-background-free-vector.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
@@ -120,72 +121,86 @@ footer{
       <span class="visually-hidden">Next</span>
     </button>
   </div>
- <div class = "card-wrap">
-  <div class="card" style="width: 18rem;">
-    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class = "card-wrap">
+ <div class="main-box">
+    <div class="d-flex flex-wrap gap-3" id="faqAccordion">
+        {% for card in cards%}
+         <div class="card" style="width: 18rem;">
+          <img src="{{card['image']}}" class="card-img-top" alt="...">
+          <div class="card-body">
+           <h5 class="card-title">{{card['title']}}</h5>
+           <p class="card-text">{{card['description']}}</p>
+           <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+         </div>
+        {% endfor %}
     </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
- </div>
+</div>
+<!--  <div class="card" style="width: 18rem;">-->
+<!--    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="card" style="width: 18rem;">-->
+<!--    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="card" style="width: 18rem;">-->
+<!--    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="card" style="width: 18rem;">-->
+<!--    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="card" style="width: 18rem;">-->
+<!--    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="card" style="width: 18rem;">-->
+<!--    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="card" style="width: 18rem;">-->
+<!--    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="card" style="width: 18rem;">-->
+<!--    <img src="https://t3.ftcdn.net/jpg/01/01/02/00/360_F_101020090_YDPJqFlgbIaVARnQtjpbfHkVYgbu6jSU.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 {%include 'footer.html'%}
