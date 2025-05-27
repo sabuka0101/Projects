@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Alk+Sanet&display=swap" rel="stylesheet">
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title>Chxo's Store</title>
+
+    <style>
+      body{
+  font-family: cursive;
+}
+
+        .main-box {
+            width: 86%;
+            margin-left: 7%;
+            margin-top: 2%
+        }
+footer{
+  background-color: rgb(84, 96, 109);
+  padding: 28px;
+  font-family: cursive;
+}
+.li1 .a1{
+  margin-left: 12px;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  transition: text-shadow 0.3s;
+}
+.li1 .a1:hover{
+  text-shadow: 0px 0px 10px black;
+}
+.ul1{
+margin-top: 30px;
+  margin-left: center;
+  list-style: none;
+  display: flex;
+  text-align: center;
+  margin-left: 32%;
+}
+.btn{
+  transition: 0.3s !important;
+}
+.btn:hover{
+  color: #218838 !important;
+  background-color: white !important;
+}
+#c{
+  margin-left: 12px;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+}
+        .card-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+    </style>
+</head>
+<body>
+{% include "header.html" %}
+<div class="main-box card-box">
+    {% for post in posts%}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top"
+             src='https://foundr.com/wp-content/uploads/2021/09/Best-online-course-platforms.png'
+             alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{post['title']}}</h5>
+            <p class="card-text">{{post['description']}}</p>
+            <p class="card-text">ავტორი: {{ post['author'] }}</p>
+            <a href="#" class="btn btn-primary">წაკითხვა</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+{% include 'footer.html' %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
