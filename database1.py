@@ -11,7 +11,17 @@ c.execute("""
       password TEXT NOT NULL
       )
   """)
-
+c.execute("""
+      CREATE TABLE IF NOT EXISTS contacts (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL,
+      comment TEXT NOT NULL
+      )
+  """)
+c.execute("""
+DELETE FROM contacts
+""")
 conn.commit()
 
 conn.close()
