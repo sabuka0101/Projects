@@ -25,45 +25,38 @@
     </style>
 </head>
 <body>
-{% include 'header.html' %}
+{% include 'admin_header.html' %}
 
 
 <div class="main-box">
-    <form action="/add_question" method="POST">
+    <h3>პოსტის რედაქტირება</h3>
+    <br>
+    <form action={{url_for('update_item', id=post['id'])}} method="POST">
         <div class="form-group">
-            <label for="exampleFormControlInput1">სახელი</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="name"
-                   placeholder="ჩაწერეთ თქვენი სახელი" required>
+            <label for="exampleFormControlInput1">სათაური</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title"
+                   placeholder="ჩაწერეთ პოსტის სათაური" value="{{post['title']}}" required>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput2">Email:</label>
-            <input type="email" class="form-control" id="exampleFormControlInput2" name="mail"
-                   placeholder="ჩაწერეთ თქვენი მეილი" required>
+            <label for="exampleFormControlInput2">მოკლე აღწერა</label>
+            <input type="text" class="form-control" id="exampleFormControlInput2" name="short_description"
+                   placeholder="ჩაწერეთ მოკლე აღწერა" value="{{post['short_description']}}" required>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">კითხვა</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="question" rows="3"
-                      placeholder="მოგვწერეთ კითხვა" required></textarea>
+            <label for="exampleFormControlTextarea1">აღწერა</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"
+                      placeholder="ჩაწერეთ პოსტის აღწერა" required>{{post['description']}}</textarea>
         </div>
-        <button type="submit" class="btn btn-primary">გაგზავნა</button>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">ავტორი</label>
+            <textarea class="form-control" id="exampleFormControlTextarea2" name="author" rows="3"
+                      placeholder="დაწერეთ ავტორი" required>{{post['author']}}</textarea>
+        </div>
+        <a href="/admin/create_items" class="btn btn-warning">უკან დაბრუნება</a>
+        <button type="submit" class="btn btn-success">რედაქტირება</button>
     </form>
 </div>
 
-
-<div class="main-box">
-    <div class="accordion" id="faqAccordion">
-        {% for question in questions%}
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>{{question['name']}}
-                <br>
-            </strong> {{question['question']}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        {% endfor %}
-    </div>
-</div>
 <br>
 <br>
 <br>
@@ -79,7 +72,6 @@
 <br>
 <br>
 <br>
-{% include 'footer.html' %}
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

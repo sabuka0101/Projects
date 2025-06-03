@@ -16,16 +16,47 @@
         body {
             font-family: "ALK Sanet", sans-serif;
         }
+
+        .main-box {
+            width: 86%;
+            margin-left: 7%;
+            margin-top: 2%
+        }
+
+        .card-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
     </style>
 </head>
 <body>
-
-<div style="margin-top: 3%">
-    <footer class="bg-dark text-white text-center py-3">
-        <p class="mb-0">&copy; 2025 MyBlogs.ge - ყველა უფლება დაცულია.</p>
-    </footer>
+{% include "header.html" %}
+<div class='main-box'>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">მთავარი</a></li>
+            <li class="breadcrumb-item"><a href="#">პოსტები</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{post['title']}}</li>
+        </ol>
+    </nav>
+    <div class="card">
+        <img src="https://foundr.com/wp-content/uploads/2021/09/Best-online-course-platforms.png" class="card-img-top"
+             alt="Blog Image">
+        <div class="card-body">
+            <h1 class="card-title">{{post['title']}}</h1>
+            <h5 class="text-muted">ავტორი: {{post['author']}}</h5>
+            <p class="text-secondary"><em>პოსტის მოკლე აღწერა: {{post['short_description']}}</em></p>
+            <hr>
+            <p class="card-text">
+                {{post['description']}}
+            </p>
+        </div>
+    </div>
 </div>
 
+{% include 'footer.html' %}
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>

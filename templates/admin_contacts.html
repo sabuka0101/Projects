@@ -16,15 +16,39 @@
         body {
             font-family: "ALK Sanet", sans-serif;
         }
+
+        .main-box {
+            width: 86%;
+            margin-left: 7%;
+            margin-top: 2%;
+        }
     </style>
 </head>
 <body>
-
-<div style="margin-top: 3%">
-    <footer class="bg-dark text-white text-center py-3">
-        <p class="mb-0">&copy; 2025 MyBlogs.ge - ყველა უფლება დაცულია.</p>
-    </footer>
-</div>
+{%include 'admin_header.html'%}
+<br>
+<br>
+<h2 class="main-box">შემოსული მესიჯები</h2>
+<table class="table main-box">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">სახელი</th>
+        <th scope="col">Email</th>
+        <th scope="col">კითხვა</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%for question in questions%}
+    <tr>
+        <th scope="row">{{question['id']}}</th>
+        <td>{{question['name']}}</td>
+        <td>{{question['email']}}</td>
+        <td>{{question['question']}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

@@ -10,20 +10,38 @@
     <link rel="stylesheet" href="//cdn.web-fonts.ge/fonts/alk-sanet/css/alk-sanet.min.css">
     <link rel="icon" type="image/png"
           href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzv-UWrgudsQRv6CGw-bKL8Jo6HJRaNCjH5A&s">
-    <title>MyBlogs.ge</title>
-
-    <style>
+     <style>
         body {
             font-family: "ALK Sanet", sans-serif;
+        }
+
+        .main-box {
+            width: 86%;
+            margin-left: 7%;
+            margin-top: 2%;
+        }
+        .sign-in-form{
+            width: 40%;
+            margin-left: 30%;
+            margin-top: 10%;
+            padding: 50px;
         }
     </style>
 </head>
 <body>
-
-<div style="margin-top: 3%">
-    <footer class="bg-dark text-white text-center py-3">
-        <p class="mb-0">&copy; 2025 MyBlogs.ge - ყველა უფლება დაცულია.</p>
-    </footer>
+<div class="sign-in-form border shadow">
+    <form method="POST" action="/sign_in">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
