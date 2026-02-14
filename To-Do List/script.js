@@ -4,7 +4,7 @@ const list = document.getElementById("list");
 
 submitBtn.onclick = function () {
   const text = textbox.value;
-  
+
   if (text.trim() === "") {
     return false;
   }
@@ -22,7 +22,7 @@ submitBtn.onclick = function () {
   deleteBtn.style.border = "none";
   deleteBtn.style.borderRadius = "3px";
   deleteBtn.style.cursor = "pointer";
-  deleteBtn.style.padding = "5px 10px";
+  deleteBtn.style.padding = "5px 9px";
   deleteBtn.style.fontSize = "18px";
 
   deleteBtn.onclick = function () {
