@@ -37,7 +37,7 @@ body {
   cursor: pointer;
   font-size: 18px;
   transition: 0.2s;
-  margin-left: 150px;
+  margin-bottom: 10px;
 }
 #deleteBtn:active {
   transform: scale(0.92);
@@ -56,8 +56,12 @@ body {
   font-style: sans-serif;
 }
 .listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: rgb(186, 189, 189);
   width: 350px;
+  padding: 10px;
   height: 30px;
   padding-left: 10px;
   padding-top: 10px;
