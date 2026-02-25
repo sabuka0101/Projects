@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiverr Gig Image</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1280px;
+        height: 769px;
+        max-width: 1280px;
+        max-height: 769px;
+        overflow: hidden;
+        background: #050b1a;
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .canvas {
+        width: 1280px;
+        height: 769px;
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          #04091a 0%,
+          #070e20 50%,
+          #060c1d 100%
+        );
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 90px;
+      }
+
+      /* Fine grid */
+      .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+          );
+        background-size: 50px 50px;
+      }
+      /* Subtle dot overlay */
+      .dots {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.07) 1px,
+          transparent 1px
+        );
+        background-size: 25px 25px;
+        opacity: 0.4;
+      }
+
+      /* Glows */
+      .glow-1 {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 180, 255, 0.13) 0%,
+          transparent 65%
+        );
+        top: -220px;
+        left: -150px;
+        pointer-events: none;
+      }
+      .glow-2 {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(100, 80, 255, 0.1) 0%,
+          transparent 65%
+        );
+        bottom: -120px;
+        right: 180px;
+        pointer-events: none;
+      }
+      .glow-3 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 200, 255, 0.07) 0%,
+          transparent 70%
+        );
+        top: 50%;
+        right: 60px;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+
+      /* Diagonal accent line */
+      .accent-line {
+        position: absolute;
+        width: 2px;
+        height: 200px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          rgba(0, 200, 255, 0.4),
+          transparent
+        );
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(35deg);
+        opacity: 0.3;
+      }
+
+      /* Left content */
+      .left {
+        position: relative;
+        z-index: 10;
+        max-width: 570px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        background: rgba(0, 200, 255, 0.07);
+        border: 1px solid rgba(0, 200, 255, 0.3);
+        border-radius: 100px;
+        padding: 7px 18px;
+        font-size: 12px;
+        color: #00c8ff;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 30px;
+        box-shadow:
+          0 0 20px rgba(0, 200, 255, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      }
+      .badge-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #00c8ff;
+        box-shadow: 0 0 8px #00c8ff;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          box-shadow: 0 0 8px #00c8ff;
+        }
+        50% {
+          opacity: 0.5;
+          box-shadow: 0 0 3px #00c8ff;
+        }
+      }
+
+      .headline {
+        font-family: "Syne", sans-serif;
+        font-size: 67px;
+        font-weight: 800;
+        line-height: 1.04;
+        color: #fff;
+        letter-spacing: -0.025em;
+        margin-bottom: 22px;
+        text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
+      }
+      .headline span {
+        background: linear-gradient(135deg, #00c8ff 0%, #7b6dff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0 0 30px rgba(0, 180, 255, 0.3));
+      }
+
+      .sub {
+        font-size: 16.5px;
+        color: rgba(255, 255, 255, 0.45);
+        font-weight: 300;
+        line-height: 1.65;
+        margin-bottom: 46px;
+        max-width: 430px;
+      }
+
+      /* Tech stack pills */
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .tech {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 12px;
+        padding: 11px 20px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        box-shadow:
+          0 4px 20px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(10px);
+      }
+      .tech:hover {
+        border-color: rgba(0, 200, 255, 0.3);
+      }
+      .tech-icon {
+        font-size: 17px;
+      }
+
+      /* Right — code card */
+      .right {
+        position: relative;
+        z-index: 10;
+        flex-shrink: 0;
+      }
+
+      .code-card {
+        width: 435px;
+        background: rgba(10, 16, 35, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 22px;
+        overflow: hidden;
+        backdrop-filter: blur(20px);
+        box-shadow:
+          0 40px 100px rgba(0, 0, 0, 0.6),
+          0 0 0 1px rgba(0, 200, 255, 0.07),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          0 0 60px rgba(0, 120, 255, 0.08);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 15px 22px;
+        background: rgba(255, 255, 255, 0.025);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .dot.r {
+        background: #ff5f57;
+        box-shadow: 0 0 6px rgba(255, 95, 87, 0.5);
+      }
+      .dot.y {
+        background: #febc2e;
+        box-shadow: 0 0 6px rgba(254, 188, 46, 0.5);
+      }
+      .dot.g {
+        background: #28c840;
+        box-shadow: 0 0 6px rgba(40, 200, 64, 0.5);
+      }
+      .filename {
+        margin-left: 8px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.28);
+        font-family: "Courier New", monospace;
+      }
+
+      /* Thin top accent on card */
+      .card-top-line {
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 200, 255, 0.5),
+          rgba(123, 109, 255, 0.5),
+          transparent
+        );
+      }
+
+      .code-body {
+        padding: 26px 28px;
+        font-family: "Courier New", monospace;
+        font-size: 13.5px;
+        line-height: 2;
+      }
+
+      .code-line {
+        display: flex;
+      }
+      .ln {
+        color: rgba(255, 255, 255, 0.13);
+        margin-right: 20px;
+        user-select: none;
+        font-size: 11.5px;
+        min-width: 18px;
+        text-align: right;
+        padding-top: 1px;
+      }
+      .kw {
+        color: #7b6dff;
+      }
+      .fn {
+        color: #00c8ff;
+      }
+      .str {
+        color: #a8e6a3;
+      }
+      .tag {
+        color: #ff8c6b;
+      }
+      .attr {
+        color: #ffd580;
+      }
+      .cm {
+        color: rgba(255, 255, 255, 0.22);
+        font-style: italic;
+      }
+      .plain {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      /* Bottom bar */
+      .bottom-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #00c8ff, #7b6dff 50%, #ff8c6b);
+        box-shadow: 0 -2px 20px rgba(0, 200, 255, 0.3);
+      }
+
+      /* Top-left corner accent */
+      .corner-tl {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px;
+        height: 120px;
+        border-top: 2px solid rgba(0, 200, 255, 0.2);
+        border-left: 2px solid rgba(0, 200, 255, 0.2);
+        border-radius: 0 0 60px 0;
+      }
+      .corner-br {
+        position: absolute;
+        bottom: 12px;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        border-bottom: 1px solid rgba(123, 109, 255, 0.15);
+        border-right: 1px solid rgba(123, 109, 255, 0.15);
+        border-radius: 40px 0 0 0;
+      }
+
+      /* Fiverr watermark */
+      .fiverr-tag {
+        position: absolute;
+        top: 36px;
+        right: 90px;
+        z-index: 20;
+        font-family: "DM Sans", sans-serif;
+        font-size: 11.5px;
+        color: rgba(255, 255, 255, 0.2);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canvas">
+      <div class="grid"></div>
+      <div class="dots"></div>
+      <div class="glow-1"></div>
+      <div class="glow-2"></div>
+      <div class="glow-3"></div>
+      <div class="accent-line"></div>
+      <div class="corner-tl"></div>
+      <div class="corner-br"></div>
+      <div class="bottom-bar"></div>
+
+      <div class="fiverr-tag">Front-End Developer</div>
+
+      <!-- LEFT -->
+      <div class="left">
+        <div class="badge">
+          <div class="badge-dot"></div>
+          Available for hire
+        </div>
+
+        <h1 class="headline">
+          Building<br /><span>Pixel-Perfect</span><br />Web Experiences
+        </h1>
+
+        <p class="sub">
+          Modern, responsive websites and web apps crafted with clean code and
+          attention to detail.
+        </p>
+
+        <div class="tech-stack">
+          <div class="tech"><span class="tech-icon">⚛️</span> React</div>
+          <div class="tech"><span class="tech-icon">🌐</span> HTML5</div>
+          <div class="tech"><span class="tech-icon">🎨</span> CSS3</div>
+          <div class="tech"><span class="tech-icon">⚡</span> JavaScript</div>
+          <div class="tech"><span class="tech-icon">💨</span> Tailwind</div>
+          <div class="tech"><span class="tech-icon">🚀</span> Next.js</div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+        <div class="code-card">
+          <div class="card-top-line"></div>
+          <div class="card-header">
+            <div class="dot r"></div>
+            <div class="dot y"></div>
+            <div class="dot g"></div>
+            <span class="filename">App.jsx</span>
+          </div>
+          <div class="code-body">
+            <div class="code-line">
+              <span class="ln">1</span><span class="kw">import</span>
+              <span class="plain">&nbsp;React&nbsp;</span
+              ><span class="kw">from</span>
+              <span class="str">&nbsp;'react'</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">2</span><span class="kw">import</span>
+              <span class="plain">&nbsp;styles&nbsp;</span
+              ><span class="kw">from</span>
+              <span class="str">&nbsp;'./App.css'</span>
+            </div>
+            <div class="code-line"><span class="ln">3</span></div>
+            <div class="code-line">
+              <span class="ln">4</span
+              ><span class="cm">// Clean. Fast. Responsive.</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">5</span
+              ><span class="kw">export default function</span>
+              <span class="fn">&nbsp;App</span><span class="plain">() {</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">6</span
+              ><span class="plain">&nbsp;&nbsp;return&nbsp;(</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">7</span
+              ><span class="plain">&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="tag">&lt;div</span>
+              <span class="attr">className</span><span class="plain">=</span
+              ><span class="str">"hero"</span><span class="tag">&gt;</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">8</span
+              ><span class="plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="tag">&lt;h1&gt;</span
+              ><span class="plain">Hello World</span
+              ><span class="tag">&lt;/h1&gt;</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">9</span
+              ><span class="plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="tag">&lt;button</span>
+              <span class="attr">&nbsp;onClick</span
+              ><span class="plain">={</span><span class="fn">handleClick</span
+              ><span class="plain">}&gt;</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">10</span
+              ><span class="plain"
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get
+                Started</span
+              >
+            </div>
+            <div class="code-line">
+              <span class="ln">11</span
+              ><span class="plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="tag">&lt;/button&gt;</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">12</span
+              ><span class="plain">&nbsp;&nbsp;&nbsp;&nbsp;</span
+              ><span class="tag">&lt;/div&gt;</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">13</span><span class="plain">&nbsp;&nbsp;)</span>
+            </div>
+            <div class="code-line">
+              <span class="ln">14</span><span class="plain">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
