@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="main">
+        <h1>Login</h1>
+      <p id="error-message" class="error-message"></p>
+      <form class="login-form" onsubmit="LogIn(event)">
+          <p>Username</p>
+          <input type="text" class="type" id="text"/>
+          <br>
+          <p>Password</p>
+          <input type="password" class="type" id="password"/>
+          <p>Remember me</p>
+          <input type="checkbox" id="check"/>
+          <p>Forgot password?</p>
+          <p>Dont have an account? <a href="#">Sign up</a></p>
+          <button id="loginBtn" >Login</button>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
