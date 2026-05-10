@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  background-color: oklch(17.86% 0.01924 164.238);
+}
+#header {
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  background-color: oklch(17.86% 0.01924 164.238 / 0.432);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid oklch(26.557% 0.03692 162.664);
+  font-family: fantasy;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  margin-top: -100px;
+}
+#title {
+  color: rgb(212, 170, 62);
+}
+#headerItems {
+  display: flex;
+  list-style: none;
+  margin-left: 27%;
+}
+.headerTags {
+  text-decoration: none;
+  font-weight: 100;
+  color: rgb(212, 170, 62);
+  font-size: large;
+  margin-left: 25px;
+}
+.headerTitle {
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 26px;
+  color: rgb(212, 170, 62);
+}
+.homeImg {
+  height: 100vh;
+  background-image:
+    linear-gradient(oklch(15.968% 0.02056 165.289 / 0.699)),
+    url("assets/hero-shop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 200px;
+}
+#bookBtn {
+  margin-left: 430px;
+  background-color: rgb(212, 170, 62);
+  border: none;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 0px 0px 5px rgb(219, 172, 52);
+  transition: 0.1s;
+  cursor: pointer;
+  font-size: 15px;
+}
+#bookBtn:hover {
+  transform: translateY(-5px);
+}
+#bookBtn:active {
+  transform: scale(1);
+  transition: none;
+}
+#bookBtnTag {
+  text-decoration: none;
+  color: rgb(26, 25, 25);
+  font-size: large;
+  font-weight: 100;
+}
+#rating {
+  border: 1px solid rgb(212, 170, 62);
+  margin-left: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
+  position: relative;
+  top: 50px;
+  border-radius: 50px;
+  width: max-content;
+  align-items: center;
+  padding-right: 50px;
+}
+#ratingText {
+  margin-left: 50px;
+}
+#servicesBtn {
+  margin-left: 20px;
+  padding: 20px 40px 20px;
+  margin-top: 30px;
+  background: none;
+  font-size: 15px;
+  color: rgb(199, 199, 199);
+  border: 1px solid rgb(100, 99, 99);
+  box-shadow: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#servicesBtn:hover {
+  border: 1px solid rgb(212, 170, 62);
+  color: rgb(212, 170, 62);
+}
+#homeInfo {
+  background-color: oklch(25.143% 0.03342 162.076 / 0.432);
+  padding: 20px;
+  border-top: 1px solid oklch(34.638% 0.05155 163.462);
+  border-bottom: 1px solid oklch(34.638% 0.05155 163.462);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 75px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#homeInfoCard {
+  margin-left: 20px;
+}
+#card {
+  background-color: oklch(25.143% 0.03342 162.076 / 0.432);
+  width: 450px;
+  border: 1px solid oklch(35.344% 0.03279 164.747);
+  box-shadow: 1px 1px 10px black;
+}
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 30px;
+}
+#allServicesTag {
+  text-decoration: none;
+  color: rgb(168, 168, 167);
+  margin-left: 1325px;
+  margin-top: -80px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: 0.3s;
+}
+#allServicesTag:hover {
+  color: rgb(212, 170, 62);
+}
+#ratingDiv {
+  background-color: oklch(25.143% 0.03342 162.076 / 0.432);
+  border-top: 1px solid oklch(34.638% 0.05155 163.462);
+  border-bottom: 1px solid oklch(34.638% 0.05155 163.462);
+  padding: 20px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#ratingCard {
+  color: rgb(212, 170, 62);
+  background-color: oklch(17.86% 0.01924 164.238);
+  border: 1px solid oklch(35.344% 0.03279 164.747);
+  padding: 30px 50px 30px;
+}
+#bookingChair {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 75px 350px 75px;
+  border: 1px solid rgb(212, 170, 62);
+  background: linear-gradient(
+    to right,
+    oklch(17.86% 0.01924 164.238),
+    oklch(20.557% 0.02511 167.823)
+  );
+}
+footer {
+  padding: 30px;
+  background-color: oklch(25.143% 0.03342 162.076 / 0.432);
+}
+#footerTags {
+  text-decoration: none;
+  color: rgb(168, 168, 167);
+  font-family: "Segoe UI&quot", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  margin-top: 10px;
+}
+#footerTags:hover {
+  color: rgb(212, 170, 62);
+}
