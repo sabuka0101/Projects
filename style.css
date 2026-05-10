@@ -9,7 +9,7 @@ body {
   background-color: oklch(17.86% 0.01924 164.238 / 0.432);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid oklch(26.557% 0.03692 162.664);
-  font-family: fantasy;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: fixed;
   width: 100%;
   z-index: 1000;
@@ -26,9 +26,12 @@ body {
 .headerTags {
   text-decoration: none;
   font-weight: 100;
-  color: rgb(212, 170, 62);
+  color: rgb(168, 168, 167);
   font-size: large;
   margin-left: 25px;
+}
+.headerTags:hover {
+  color: rgb(212, 170, 62);
 }
 .headerTitle {
   text-decoration: none;
