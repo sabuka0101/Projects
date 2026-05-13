@@ -13,7 +13,7 @@ body {
   position: fixed;
   width: 100vw;
   z-index: 1000;
-  margin-top: -100px;
+  margin-top: -102px;
 }
 #title {
   color: rgb(212, 170, 62);
