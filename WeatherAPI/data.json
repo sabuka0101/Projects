@@ -1,0 +1,22 @@
+{
+    "cities": [
+        "dubai"
+    ],
+    "history": [
+        {
+            "city": "Tbilisi",
+            "temperature": 8.5,
+            "wind_speed": 9.3
+        },
+        {
+            "city": "Tbilisi",
+            "temperature": 8.3,
+            "wind_speed": 9.3
+        },
+        {
+            "city": "Dubai",
+            "temperature": 26.4,
+            "wind_speed": 4.3
+        }
+    ]
+}
